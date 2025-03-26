@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rings</title>
+    <link rel="icon" href="Logo2.jpg" type="image/x-icon"> <!-- Favicon link -->
+    <style>
+        body {
+            background-image: url('marbleback.jpg'); 
+            background-size: 1550px 1550px;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.9; 
+            font-family: Arial, sans-serif; /* Font style */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+        .plus-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .plus-button::before,
+        .plus-button::after {
+            content: '';
+            position: absolute;
+            background-color: #c4a85c; /* Light gold color */
+        }
+        .plus-button::before {
+            width: 4px;
+            height: 30px;
+        }
+        .plus-button::after {
+            width: 30px;
+            height: 4px;
+        }
+        .plus-button:hover::before,
+        .plus-button:hover::after {
+            background-color: #a89050;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(255, 215, 0, 0.8); /* Semi-transparent gold */
+            padding: 15px 0;
+            border: 3px solid gold; /* Default gold border */
+            border-radius: 10px; /* Rounded corners for the navbar */
+            margin: 20px; /* Space around the navbar */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+        }
+
+        /* Media Queries for Responsive Navbar Border Size */
+        @media (min-width: 1200px) {
+            .navbar {
+                border-width: 5px; /* Larger border for large screens */
+            }
+        }
+
+        @media (max-width: 1199px) and (min-width: 768px) {
+            .navbar {
+                border-width: 4px; /* Medium border for tablet devices */
+            }
+        }
+
+        @media (max-width: 767px) {
+            .navbar {
+                border-width: 3px; /* Smaller border for mobile devices */
+            }
+        }
+
+        .navbar a {
+            color: black(255, 255, 255, 0); /* Link color */
+            text-decoration: none; /* Remove underline */
+            padding: 10px 20px; /* Space around links */
+            border-radius: 5px; /* Rounded corners for links */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+        }
+        .navbar a {
+    color: rgb(255, 255, 255); /* Default color */
+    text-decoration: none; /* No underline */
+}
+
+.navbar a:visited {
+    color: white; /* Color after the link has been visited */
+}
+
+.navbar a:hover {
+    color: white; /* Color on hover */
+}
+
+.navbar a:active {
+    color: white; /* Color when the link is clicked */
+}
+
+        .navbar a:hover {
+            background-color: rgba(255, 215, 0, 1); /* Fully opaque gold on hover */
+            transform: scale(1.1); /* Slightly increase size on hover */
+            box-shadow: 0 0 15px rgba(255, 215, 0, 1); /* Glow effect on hover */
+        }
+
+        .content {
+            text-align: center; 
+            color: black; 
+            margin-top: 20px; /* Space below navbar */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.body.contentEditable = "true";
+        document.designMode = "on";
+    
+        function saveChanges() {
+            fetch("/save", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ content: document.documentElement.outerHTML })
+            }).then(response => response.text()).then(data => console.log(data));
+        }
+    
+        // Auto-save every 5 seconds
+        setInterval(saveChanges, 5000);
+    </script>
+    
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Home.html">Home</a>
+        <a href="Rings.html">Rings</a>
+        <a href="Necklaces.html">Necklaces</a>
+        <a href="Bracelets.html">Bracelets</a>
+        <a href="Earrings.html">Earrings</a>
+    </div>
+    <!-- Content Section -->
+
+
+
+    
+</body>
+</html>

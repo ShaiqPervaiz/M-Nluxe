@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="icon" href="Logo2.jpg" type="image/x-icon"> <!-- Favicon link -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(270deg, #fff8e1, #ffecb3, #ffe082, #ffca28);
+            background-size: 400% 400%;
+            animation: gradientAnimation 6s ease infinite;
+            overflow: hidden;
+            color: #8a6b30;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .floating-bg {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        .circle {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 224, 130, 0.5);
+            border-radius: 50%;
+            animation: floatAnimation 8s infinite ease-in-out;
+        }
+        .circle:nth-child(1) { top: 10%; left: 20%; animation-duration: 10s; }
+        .circle:nth-child(2) { top: 50%; left: 50%; animation-duration: 12s; }
+        .circle:nth-child(3) { top: 75%; left: 30%; animation-duration: 15s; }
+        .circle:nth-child(4) { top: 90%; left: 70%; animation-duration: 11s; }
+        @keyframes floatAnimation {
+            0% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-50px) translateX(40px); }
+            100% { transform: translateY(0px) translateX(0px); }
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            background: rgba(255, 248, 225, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 224, 130, 0.7);
+            max-width: 90%;
+            width: 100%;
+            max-height: 90vh;
+            align-items: center;
+            z-index: 10;
+        }
+        .product-image {
+            width: 40%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .product-info {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        .product-title {
+            font-size: 30px;
+            margin: 10px 0;
+            color: #b89c50;
+        }
+        .product-price {
+            font-size: 24px;
+            color: #caa85d;
+            margin: 10px 0;
+        }
+        .product-description {
+            font-size: 18px;
+            color: #8a6b30;
+        }
+        .add-to-cart {
+            background-color: #caa85d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .add-to-cart:hover {
+            background-color: #b89c50;
+        }
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                align-items: flex-start;
+            }
+            .product-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .product-image {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-bg">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="product-container">
+        <img src="product.jpg" alt="Product Image" class="product-image">
+        <div class="product-info">
+            <h2 class="product-title">Luxury Gold Bracelet</h2>
+            <p class="product-price">$149.99</p>
+            <p class="product-description">A beautifully designed gold bracelet with a delicate and elegant touch.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+</body>
+</html>
